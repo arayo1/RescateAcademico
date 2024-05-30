@@ -1,0 +1,50 @@
+* {
+    margin-block: 0;
+    padding: 0;
+  }
+  
+  #fondo {
+    background-image: url(../img/Inicio.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+
+  #titulo{
+    background-image: url(../img/titulo.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+     position:absolute;
+     z-index: 2;
+     width: 465px;
+     height: 120px;
+     margin-left: 32%;
+  }
+  
+   #start{
+    cursor: pointer;
+    background-image: url(../img/Start.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+     position: absolute;
+     z-index: 2;
+     width: 310px;
+     height: 100px;
+     bottom: 0;
+     right: 0;
+     margin-right: 20px;
+     margin-top: 50px;
+
+}
+
+.contenedor{
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+    margin-top: 18px;
+    justify-content: center;
+    position: absolute;
+  }

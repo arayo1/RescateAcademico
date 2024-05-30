@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#ana {
+  background-image: url(../img/Anarun.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  left: 20px;
+}
+
+#botonsonido{
+  cursor: pointer;
+  background-image: url(../img/sinsonido.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    height: 112px;
+    margin-left: 25%;
+    margin-top: 14px;
+}
+
+#cuadro1{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 180px;
+  display: flex;
+  margin-left: 60%;
+  z-index: 9999; 
+}
+
+#cuadro1 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#cuadro2{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 180px;
+  display: flex;
+  margin-left: 60%;
+  z-index: 999; 
+}
+
+#cuadro2 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#cuadro3{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 180px;
+  display: flex;
+  margin-left: 60%;
+  z-index: 99; 
+}
+
+#cuadro3 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#cuadro4{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 180px;
+  display: flex;
+  margin-left: 60%;
+  z-index: 9; 
+}
+
+#cuadro4 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#fondo {
+  background-image: url(../img/Loby.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+#fran{
+  cursor: pointer;
+  background-image: url(../img/Francisco.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 24%;
+  bottom: 30%;
+}
+
+#hideOverlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+#mecanicas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  margin-left: 20%;
+  margin-top: 8%;
+  z-index: 10000; 
+}
+
+#menu{
+   cursor: pointer;
+   background-image: url(../img/menu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 2;
+    width: 310px;
+    height: 100px;
+    margin-left: 3%;
+    margin-top: 18px;
+}
+
+#overlay img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+#sofi{
+  cursor: pointer;
+  background-image: url(../img/Sofia.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 12%;
+  bottom: 30%;
+}
+
+
+#vale{
+  cursor: pointer;
+  background-image: url(../img/Valentina.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 36%;
+  bottom: 30%;
+}
+
+
+.personaje {
+  height: 240px;
+  width: 320px;
+  bottom: 50px;
+  position: absolute;
+}
+
+.personaje2 {
+  height: 240px;
+  width: 240px;
+  bottom: 50px;
+  position: absolute;
+}
+
+

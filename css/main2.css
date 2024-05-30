@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#ana {
+  background-image: url(../img/Anarun.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 20px;
+}
+
+#botonsonido {
+  cursor: pointer;
+  background-image: url(../img/sinsonido.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 150px;
+  height: 112px;
+  margin-left: 25%;
+  margin-top: 14px;
+}
+
+#bustofran {
+  background-image: url(../img/Francisco\ busto\ tecla.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin-left: 77%;
+  margin-top: 19px;
+}
+
+#bustosofi {
+  background-image: url(../img/Sofia\ busto\ tecla.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin-left: 91%;
+  margin-top: 19px;
+}
+
+#bustovale {
+  background-image: url(../img/Vale\ busto\ tecla.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin-left: 84%;
+  margin-top: 19px;
+}
+
+#fondo {
+  background-image: url(../img/Escenario2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+#franbusto{
+  display: none;
+  right: 0;
+  align-content: center;
+  margin-top: 9%;
+  background-image: url(../img/FranciscoBusto.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  width: 600px;
+  position: absolute;
+}
+
+#ganar {
+  z-index: 3;
+  background-image: url(../img/Ganar.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: none;
+  height: 350px;
+  width: 350px;
+  margin-left: 40%;
+  margin-top: 14%;
+}
+
+#menu {
+  cursor: pointer;
+  background-image: url(../img/menu.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 310px;
+  height: 100px;
+  margin-left: 3%;
+  margin-top: 18px;
+}
+
+#nota {
+  background-image: url(../img/HP5.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  height: 90px;
+  margin-left: 56%;
+  margin-top: 19px;
+}
+
+#perder {
+  z-index: 3;
+  background-image: url(../img/Perder.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: none;
+  height: 350px;
+  width: 350px;
+  margin-left: 40%;
+  margin-top: 14%;
+}
+
+#sofibusto{
+  display: none;
+  right: 0;
+  align-content: center;
+  margin-top: 9%;
+  background-image: url(../img/SofiaBusto.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  width: 600px;
+  position: absolute;
+}
+
+#valebusto{
+  display: none;
+  right: 0;
+  align-content: center;
+  margin-top: 9%;
+  background-image: url(../img/ValentinaBusto.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  width: 600px;
+  position: absolute;
+}
+
+.jefe {
+  background-image: url(../img/Enemigo2.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 0;
+  transform: scaleX(1);
+}
+
+.inverted {
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.personaje {
+  height: 240px;
+  width: 320px;
+  bottom: 50px;
+  position: absolute;
+}
+
