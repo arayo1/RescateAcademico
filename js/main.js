@@ -81,12 +81,17 @@ function aparicionjefe(num, direction) {
 }
 
 function jefe(sonido4,sonido5,sonido6) {
-  if (numerodejefe > 10 && vida != 0 ) {
+  if (numerodejefe > 5 && vida != 0 ) {
     $("#ana").css("background-image", "url(./img/Victoria.gif");
     // ganar
     $ganar.css("display", "block");
     sonido6.play();
+    setTimeout(
+      sonido6.stop()
+      ,20000
+    )
     return;
+    
   };
   if (vida == 0 || jefesactivos.size >= 2) { return };
   estadojefe = true;
@@ -204,6 +209,8 @@ $(document).ready(function () {
 
   $(document).keydown(function (teclado) {
     if (teclado.which == 90 && !poderfran) {
+      var sonido = document.getElementById('sonido7')
+            sonido.play();
         $("#franbusto").css("display", "block");
       setTimeout(() => {
         $("#franbusto").css("display", "none");
@@ -222,6 +229,8 @@ $(document).ready(function () {
 
     $(document).keydown(function (teclado) {
       if (teclado.which == 88 && !podervale) { 
+        var sonido = document.getElementById('sonido7')
+            sonido.play();
         if(vida>=4)return;
           $("#valebusto").css("display", "block");
         setTimeout(() => {
@@ -237,6 +246,8 @@ $(document).ready(function () {
 
       $(document).keydown(function (teclado) {
         if (teclado.which == 67 && !podersofi) { 
+          var sonido = document.getElementById('sonido7')
+            sonido.play();
             $("#sofibusto").css("display", "block");
             podersofi = true;
             inmune = true;

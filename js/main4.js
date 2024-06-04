@@ -4,9 +4,7 @@ const jefesactivos = new Map();
 var estadojefe = true;
 var click = false;
 var sonidoganar = false;
-var poderfran = false;
-var podervale = false;
-var podersofi = false;
+var francomuere= false;
 
 const $ana = $("#ana");
 const $vida = $("#nota");
@@ -16,6 +14,7 @@ const $ganar = $("#ganar");
 
 const posicionfinaljefe = "35%";
 const posicionfinaljefeder = "35%";
+const posicionfinaljefearr = "60%";
 const imagenesvida = [
   'url(./img/HP0.png)',
   'url(./img/HP1.png)',
@@ -26,26 +25,15 @@ const imagenesvida = [
 
 // funciones 
 
-function remomover(){
-  $("#remo").animate(
-    {
-      left: "800px",
-    },
-    1500
-  );
-
-  $("#remo").animate(
-    {
-      left: "-100px",
-    },
-    1500
-  );
+function francosale(){
+$("#franco").css("background-image", "url(./img/Franco.gif");
+   
 }
 
-function obtenerposicion(direction) {
+function obtenerposicion(direction,top) {
   const $jefe = $(jefesactivos.get(direction))
-  var posicionjefe = $jefe.offset().left;
-  var posicionana = $ana.offset().left;
+  var posicionjefe =  top? $jefe.offset().top: $jefe.offset().left;
+  var posicionana =  top? $ana.offset().top: $ana.offset().left;
   return { posicionjefe, posicionana, $jefe };
 }
 
@@ -68,8 +56,21 @@ function anacaminar() {
   $ana.css("background-image", "url(./img/Anarun.gif)");
 }
 
-function aparicionjefe(num, direction) {
-  if (direction) {
+function aparicionjefe(num, direction, superior) {
+    console.log(superior)
+    if (superior){
+        console.log("superior")
+        $escenario.append(`<div class="personaje jefetop" id="jefe${num}"></div>`)
+        const $jefe = $(`#jefe${num}`);
+        jefesactivos.set(direction, `#jefe${num}`)
+        $jefe.animate(
+          {
+            top: posicionfinaljefearr,
+          },
+          800
+        );
+    }
+  else if (direction) {
     $escenario.append(`<div class="personaje jefe" id="jefe${num}"></div>`)
     const $jefe = $(`#jefe${num}`);
     jefesactivos.set(direction, `#jefe${num}`)
@@ -77,7 +78,7 @@ function aparicionjefe(num, direction) {
       {
         right: posicionfinaljefeder,
       },
-      580
+      800
     );
   } else {
     $escenario.append(`<div class="personaje jefe inverted" id="jefe${num}"></div>`)
@@ -87,26 +88,55 @@ function aparicionjefe(num, direction) {
       {
         left: posicionfinaljefe,
       },
-      580
+      800
     );
   }
   return `#jefe${num}`;
 }
-
 function jefe(sonido4,sonido5,sonido6) {
-  if (numerodejefe > 10 && vida != 0 ) {
+    if (numerodejefe > 10 && vida != 0) {
+      if(!sonidoganar){
+        sonido6.play();
+        sonidoganar = true
+        $("#esteban").css("display","block");
+        $("#esteban").animate(
+          {
+            left: "30%",
+          },
+          900
+        );
+        setTimeout(() => {
+          $ana.css("display","none");
+          $("#esteban").css("display","none");
+        }, 6000
+        )
+        setTimeout(() => {
+          $("#beso").css("display","block");
+        }, 6000
+        )
+      }
+  if (!francomuere){
     $("#ana").css("background-image", "url(./img/Victoria.gif");
     // ganar
-    $ganar.css("display", "block");
-    sonido6.play();
-    return;
-  };
+   
+      $("#franco").css("background-image", "url(./img/Francomuere.gif");
+    
+    francomuere = true;
+  }
+  setTimeout(() => {
+      $("#franco").css("background-image", "url(./img/Francomuerto.gif");
+    },1300
+    ) 
+      return;
+    };
+
   if (vida == 0 || jefesactivos.size >= 2) { return };
   estadojefe = true;
 
   // se calcula si es par. si lo es el enemigo sale por la derecha.
+  const top = ! (numerodejefe % 3);
   const direction = !!(numerodejefe % 2);
-  const idjefe = aparicionjefe(numerodejefe, direction);
+  const idjefe = aparicionjefe(numerodejefe, direction, top);
   const $jefe = $(idjefe);
   setTimeout(() => {
     if (estadojefe) {
@@ -120,7 +150,7 @@ function jefe(sonido4,sonido5,sonido6) {
         setTimeout(anafrente, 1000);
       }
     }
-  }, 750);
+  }, 1000);
   numerodejefe = numerodejefe + 1;
 }
 
@@ -133,6 +163,11 @@ function jefemuere($jefe, direction) {
   $jefe.css("display", "none");
 
 }
+
+function anapegatop() {
+    $ana.css("background-image", "url(./img/Anagolpetop.gif)");
+
+  }
 
 function anapega() {
   $ana.css("background-image", "url(./img/Anagolpe.gif)");
@@ -166,7 +201,7 @@ $(document).ready(function () {
     {
       left: "42%",
     },
-    900
+    2000
   );
 
   // acciones que se repiten durante el funcionamiento del juego
@@ -176,8 +211,9 @@ $(document).ready(function () {
   var sonido6 = document.getElementById('sonido6')
 
   setInterval(jefe, 1200, sonido4,sonido5,sonido6);
-  setInterval(remomover, 2500,);
-  setTimeout(anafrente, 980);
+  //setInterval(remomover, 2500,);
+  setTimeout(anafrente, 2000);
+  setTimeout(francosale, 2800);
  // setTimeout(anafrente, 5000);
 
   // escuchar el teclado
@@ -198,6 +234,7 @@ $(document).ready(function () {
       $("#botonsonido").css("background-image", "url(./img/sonido.png)");
   }
   });
+if (!francomuere){
 
   $(document).keydown(function (teclado) {
     if (teclado.which == 38) {
@@ -209,8 +246,8 @@ $(document).ready(function () {
   });
   $(document).keydown(function (teclado) {
     if (teclado.which == 90 && !poderfran) {
-      var sonido = document.getElementById('sonido7')
-            sonido.play();
+        var sonido = document.getElementById('sonido7')
+        sonido.play();
         $("#franbusto").css("display", "block");
       setTimeout(() => {
         $("#franbusto").css("display", "none");
@@ -230,7 +267,7 @@ $(document).ready(function () {
     $(document).keydown(function (teclado) {
       if (teclado.which == 88 && !podervale) { 
         var sonido = document.getElementById('sonido7')
-            sonido.play();
+        sonido.play();
         if(vida>=4)return;
           $("#valebusto").css("display", "block");
         setTimeout(() => {
@@ -246,7 +283,7 @@ $(document).ready(function () {
 
       $(document).keydown(function (teclado) {
         if (teclado.which == 67 && !podersofi) { 
-          var sonido = document.getElementById('sonido7')
+            var sonido = document.getElementById('sonido7')
             sonido.play();
             $("#sofibusto").css("display", "block");
             podersofi = true;
@@ -264,6 +301,29 @@ $(document).ready(function () {
 
 
   $(document).keyup(function (teclado) {
+    if (teclado.which == 87) {
+        try {
+              anapegatop();
+              var sonido = document.getElementById('sonido3')
+              sonido.play();
+              const { posicionjefe, posicionana, $jefe } = obtenerposicion(false,true);
+              if (posicionjefe >= posicionana - 200) {
+                $("#franco").css("background-image", "url(./img/Francodano.gif");
+                jefemuere($jefe, false);
+                estadojefe = false;
+
+                setTimeout(() => {
+                  $("#franco").css("background-image", "url(./img/Franco.gif");
+              },800
+              )
+               
+              }
+    
+          } finally {
+            setTimeout(anafrente, 500);
+          }
+    
+        }
     if (teclado.which == 65 || teclado.which == 68) {
       try {
         if (teclado.which == 65) {
@@ -293,4 +353,4 @@ $(document).ready(function () {
 
     }
   });
-});
+}});

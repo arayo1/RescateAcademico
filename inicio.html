@@ -21,41 +21,13 @@
       </div>
 
       <script>
-        function showOverlay(overlayId, duration) {
-            var overlay = document.getElementById(overlayId);
-            overlay.style.display = "flex";
-
-            setTimeout(function() {
-                overlay.style.display = "none";
-            }, duration);
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            showOverlay("mecanicas", 10000); 
-        });
-
-
     </script>
 
         <div id="mecanicas">
             <img src="img/Mecanicas.png" alt="Imagen Flotante">
         </div>
 
-        <div id="cuadro1">
-          <img src="img/cuadro1.png" alt="">
-        </div>
-
-        <div id="cuadro2">
-          <img src="img/cuadro2.png" alt="">
-        </div>
-
-        <div id="cuadro3">
-          <img src="img/cuadro3.png" alt="">
-        </div>
-
-        <div id="cuadro4">
-          <img src="img/cuadro4.png" alt="">
-        </div>
+        <div id="cuadros"> </div>
 
        <main id="fondo">
         <audio src="Sonidos/Musica1.mp3" id="sonido1"></audio>

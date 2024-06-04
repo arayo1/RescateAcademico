@@ -204,6 +204,8 @@ $(document).ready(function () {
 
   $(document).keydown(function (teclado) {
     if (teclado.which == 90 && !poderfran) {
+      var sonido = document.getElementById('sonido7')
+            sonido.play();
         $("#franbusto").css("display", "block");
       setTimeout(() => {
         $("#franbusto").css("display", "none");
@@ -222,6 +224,8 @@ $(document).ready(function () {
 
     $(document).keydown(function (teclado) {
       if (teclado.which == 88 && !podervale) { 
+        var sonido = document.getElementById('sonido7')
+            sonido.play();
         if(vida>=4)return;
           $("#valebusto").css("display", "block");
         setTimeout(() => {
@@ -237,6 +241,8 @@ $(document).ready(function () {
 
       $(document).keydown(function (teclado) {
         if (teclado.which == 67 && !podersofi) { 
+          var sonido = document.getElementById('sonido7')
+            sonido.play();
             $("#sofibusto").css("display", "block");
             podersofi = true;
             inmune = true;

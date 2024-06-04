@@ -72,13 +72,12 @@
 #franbusto{
   display: none;
   right: 0;
-  align-content: center;
-  margin-top: 9%;
-  background-image: url(../img/FranciscoBusto.gif);
+  align-content: start;
+  background-image: url(../img/Franojos.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 450px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
   position: absolute;
 }
 
@@ -95,7 +94,7 @@
   margin-top: 14%;
 }
 
-#menu {
+#index {
   cursor: pointer;
   background-image: url(../img/menu.png);
   background-size: cover;
@@ -136,26 +135,24 @@
 #sofibusto{
   display: none;
   right: 0;
-  align-content: center;
-  margin-top: 9%;
-  background-image: url(../img/SofiaBusto.gif);
+  align-content: start;
+  background-image: url(../img/Sofiojos.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 450px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
   position: absolute;
 }
 
 #valebusto{
   display: none;
   right: 0;
-  align-content: center;
-  margin-top: 9%;
-  background-image: url(../img/ValentinaBusto.gif);
+  align-content: start;
+  background-image: url(../img/Valeojos.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 450px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
   position: absolute;
 }
 

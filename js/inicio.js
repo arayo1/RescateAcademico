@@ -1,7 +1,23 @@
 var click = false;
 
+function showOverlay(overlayId, duration) {
+  var overlay = document.getElementById(overlayId);
+  overlay.style.display = "flex";
+
+  setTimeout(function() {
+      overlay.style.display = "none";
+  }, duration);
+}
+
+
+
+
+
 $(document).ready(function () {
   const $ana = $("#ana");
+  const $letrero = $("#mecanicas");
+
+  $("#cuadros").html('<div id="cuadro1"><img src="img/cuadro1.png" alt=""></div>') 
 
   function izquierda() {
     $ana.css("transform", "scaleX(-1)");
@@ -46,6 +62,12 @@ $(document).ready(function () {
 
   }
 
+
+  $("#mecanicas").click(function (e) { 
+    document.getElementById("mecanicas").style.display = "none";
+  })
+
+
   $("#botonsonido").click(function (e) { 
     e.preventDefault();
 
@@ -74,22 +96,23 @@ $(document).ready(function () {
     }
   });
 
-  $("#vale").click(function (e) { 
-    e.preventDefault();
-    $("#cuadro1").html('<div id="cuadro2"><img src="img/cuadro2.png" alt=""></div>') 
 
+  $(document).keydown(function (teclado) {
+    if (teclado.which == 88) {
+      $("#cuadros").html('<div id="cuadro2"><img src="img/cuadro2.png" alt=""></div>') 
+    }
   });
 
-  $("#fran").click(function (e) { 
-    e.preventDefault();
-    $("#cuadro1").html('<div id="cuadro3"><img src="img/cuadro3.png" alt=""></div>') 
-
+  $(document).keydown(function (teclado) {
+    if (teclado.which == 90) {
+      $("#cuadros").html('<div id="cuadro2"><img src="img/cuadro3.png" alt=""></div>') 
+    }
   });
 
-  $("#sofi").click(function (e) { 
-    e.preventDefault();
-    $("#cuadro1").html('<div id="cuadro4"><img src="img/cuadro4.png" alt=""></div>') 
-
+  $(document).keydown(function (teclado) {
+    if (teclado.which == 67) {
+      $("#cuadros").html('<div id="cuadro2"><img src="img/cuadro4.png" alt=""></div>') 
+    }
   });
 
   $(document).keydown(function (teclado) {
@@ -106,6 +129,7 @@ $(document).ready(function () {
       setTimeout(analateral, 500);
     }
   });
+  
   setInterval(() => {
     var posicionana = $ana.offset().left;
     console.log(posicionana);
